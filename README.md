@@ -1,2 +1,2 @@
 # chat_server
-Hi,this is the application project
+Hi,this is the application project.
