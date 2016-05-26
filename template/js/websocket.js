@@ -98,8 +98,6 @@ exports.init = function(app){
 
     socket.on('img_from_client', function (data) {
       var img = data;
-      /*    var user_id = data.user_id;
-      *      var twitter_name = data.twitter_name;*/
       var base64 = img;
 
       if (!base64) {
@@ -142,6 +140,18 @@ exports.init = function(app){
           });
         });
 
+        /*------------------------------------------------
+        json
+        -------------------------------------------------*/
 
-      });
-    };
+        socket.on('json_from_client', function (data) {
+          
+          console.log(data.name);
+          socket.json.emit('json_from_server',{
+                name: "hello",
+                desc: "world"
+           });
+          });
+
+        });
+      };
